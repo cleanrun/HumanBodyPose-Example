@@ -17,6 +17,12 @@
 		AB6293932A45C0AD00B86D62 /* PoseRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6293922A45C0AD00B86D62 /* PoseRequestError.swift */; };
 		AB6675672A444F27009C6B86 /* PoseDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6675662A444F27009C6B86 /* PoseDetector.swift */; };
 		AB6675692A445066009C6B86 /* man-full-body-pose.png in Resources */ = {isa = PBXBuildFile; fileRef = AB6675682A445066009C6B86 /* man-full-body-pose.png */; };
+		AB6A6DAA2A488AA60013B266 /* faceon-example.MOV in Resources */ = {isa = PBXBuildFile; fileRef = AB6A6DA92A488AA50013B266 /* faceon-example.MOV */; };
+		AB6A6DAC2A488B040013B266 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A6DAB2A488B040013B266 /* VideoPlayerView.swift */; };
+		AB6A6DAF2A488F630013B266 /* AVPlayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A6DAE2A488F630013B266 /* AVPlayer+Extension.swift */; };
+		AB6A6DB22A48A1970013B266 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A6DB12A48A1970013B266 /* Resource.swift */; };
+		AB6A6DB32A48A2070013B266 /* walking.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AB6A6DB02A48A1760013B266 /* walking.mp4 */; };
+		AB6A6DB52A48A23F0013B266 /* running.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AB6A6DB42A48A23F0013B266 /* running.mp4 */; };
 		ABB8CBEE2A4414A2002A1E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8CBED2A4414A2002A1E4D /* AppDelegate.swift */; };
 		ABB8CBF02A4414A2002A1E4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8CBEF2A4414A2002A1E4D /* SceneDelegate.swift */; };
 		ABB8CBF22A4414A2002A1E4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8CBF12A4414A2002A1E4D /* ViewController.swift */; };
@@ -36,6 +42,12 @@
 		AB6293922A45C0AD00B86D62 /* PoseRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseRequestError.swift; sourceTree = "<group>"; };
 		AB6675662A444F27009C6B86 /* PoseDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetector.swift; sourceTree = "<group>"; };
 		AB6675682A445066009C6B86 /* man-full-body-pose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "man-full-body-pose.png"; sourceTree = "<group>"; };
+		AB6A6DA92A488AA50013B266 /* faceon-example.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "faceon-example.MOV"; sourceTree = "<group>"; };
+		AB6A6DAB2A488B040013B266 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		AB6A6DAE2A488F630013B266 /* AVPlayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Extension.swift"; sourceTree = "<group>"; };
+		AB6A6DB02A48A1760013B266 /* walking.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking.mp4; sourceTree = "<group>"; };
+		AB6A6DB12A48A1970013B266 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		AB6A6DB42A48A23F0013B266 /* running.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = running.mp4; sourceTree = "<group>"; };
 		ABB8CBEA2A4414A2002A1E4D /* HumanBodyPose-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HumanBodyPose-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB8CBED2A4414A2002A1E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABB8CBEF2A4414A2002A1E4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				AB6293842A45938C00B86D62 /* simd_float4x4+Extension.swift */,
+				AB6A6DAE2A488F630013B266 /* AVPlayer+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -68,9 +81,10 @@
 		AB62938E2A45B06200B86D62 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				AB6293812A458A3800B86D62 /* PoseView.swift */,
+				AB6A6DAD2A488B0B0013B266 /* Views */,
 				AB6675662A444F27009C6B86 /* PoseDetector.swift */,
 				AB62938A2A459A3C00B86D62 /* CameraSession.swift */,
+				AB6A6DB12A48A1970013B266 /* Resource.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -83,6 +97,15 @@
 				AB6293922A45C0AD00B86D62 /* PoseRequestError.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		AB6A6DAD2A488B0B0013B266 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB6293812A458A3800B86D62 /* PoseView.swift */,
+				AB6A6DAB2A488B040013B266 /* VideoPlayerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		ABB8CBE12A4414A2002A1E4D = {
@@ -117,6 +140,9 @@
 				AB6293862A45988700B86D62 /* biped_robot.usdz */,
 				AB6293882A45989E00B86D62 /* biped_robot.scn */,
 				AB6675682A445066009C6B86 /* man-full-body-pose.png */,
+				AB6A6DA92A488AA50013B266 /* faceon-example.MOV */,
+				AB6A6DB02A48A1760013B266 /* walking.mp4 */,
+				AB6A6DB42A48A23F0013B266 /* running.mp4 */,
 			);
 			path = "HumanBodyPose-Example";
 			sourceTree = "<group>";
@@ -179,7 +205,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6A6DB32A48A2070013B266 /* walking.mp4 in Resources */,
+				AB6A6DAA2A488AA60013B266 /* faceon-example.MOV in Resources */,
 				AB6675692A445066009C6B86 /* man-full-body-pose.png in Resources */,
+				AB6A6DB52A48A23F0013B266 /* running.mp4 in Resources */,
 				ABB8CBFA2A4414A3002A1E4D /* LaunchScreen.storyboard in Resources */,
 				AB6293872A45988700B86D62 /* biped_robot.usdz in Resources */,
 				ABB8CBF72A4414A3002A1E4D /* Assets.xcassets in Resources */,
@@ -195,9 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6A6DB22A48A1970013B266 /* Resource.swift in Sources */,
 				ABB8CBF22A4414A2002A1E4D /* ViewController.swift in Sources */,
 				ABB8CBEE2A4414A2002A1E4D /* AppDelegate.swift in Sources */,
 				AB6293822A458A3800B86D62 /* PoseView.swift in Sources */,
+				AB6A6DAC2A488B040013B266 /* VideoPlayerView.swift in Sources */,
 				AB6293932A45C0AD00B86D62 /* PoseRequestError.swift in Sources */,
 				AB6675672A444F27009C6B86 /* PoseDetector.swift in Sources */,
 				AB62938D2A45B05500B86D62 /* SkeletonType.swift in Sources */,
@@ -205,6 +236,7 @@
 				AB6293852A45938C00B86D62 /* simd_float4x4+Extension.swift in Sources */,
 				ABB8CBF02A4414A2002A1E4D /* SceneDelegate.swift in Sources */,
 				AB6293912A45B63800B86D62 /* JointPoint.swift in Sources */,
+				AB6A6DAF2A488F630013B266 /* AVPlayer+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

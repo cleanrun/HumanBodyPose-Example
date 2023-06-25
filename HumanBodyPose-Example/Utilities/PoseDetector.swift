@@ -86,6 +86,30 @@ final class PoseDetector {
         }
     }
     
+    func makeRequest(using image: CGImage, completion: (PoseRequestError?) -> Void) {
+        recognizedPoints.removeAll()
+        
+        let bufferRequest = VNImageRequestHandler(cgImage: image)
+        do {
+            try bufferRequest.perform([request])
+            if let performedObservations = request.results?.first {
+                bodyObservation = performedObservations
+                for keypointName in keypointNames {
+                    if let point = getPoint(keypointName) {
+                        let jointPoint = JointPoint(name: keypointName, point: point)
+                        recognizedPoints.append(jointPoint)
+                    }
+                }
+                completion(nil)
+            } else {
+                completion(.observationIsNil)
+            }
+        } catch {
+            print("Perform request error: \(error.localizedDescription)")
+            completion(.failedToPerformTheRequest)
+        }
+    }
+    
     private func getPointsGroup(_ group: VNHumanBodyPose3DObservation.JointsGroupName) -> RecognizedPointsGroup? {
         if let bodyObservation {
             return try? bodyObservation.recognizedPoints(group)

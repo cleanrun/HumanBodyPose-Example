@@ -40,8 +40,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cameraContainerView" destination="r1K-Pg-UkF" id="3iG-tl-ljC"/>
                         <outlet property="poseViewContainerView" destination="Yne-g6-3pI" id="K00-V1-McT"/>
+                        <outlet property="sourceContainerView" destination="r1K-Pg-UkF" id="sBv-qh-bpn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
