@@ -63,8 +63,8 @@ final class VideoPlayerView: UIView {
     func setupPlayerItem(_ url: URL) {
         commonInit()
         
-        slider.isContinuous = false
-        slider.addTarget(self, action: #selector(sliderAction(_:)), for: .valueChanged)
+        //slider.isContinuous = false
+        slider.addTarget(self, action: #selector(sliderAction(_:event:)), for: .valueChanged)
         
         player.replaceCurrentItem(with: AVPlayerItem(url: url))
         
@@ -82,7 +82,7 @@ final class VideoPlayerView: UIView {
             
             player.addProgressObserver { [unowned self] duration in
                 generateSampleBuffer(duration: duration)
-                generateImage()
+                //generateImage()
             }
         })
     }
@@ -122,10 +122,19 @@ final class VideoPlayerView: UIView {
         })
     }
     
-    @objc private func sliderAction(_ sender: UISlider) {
+    @objc private func sliderAction(_ sender: UISlider, event: UIEvent) {
         let value = slider.value
         let time = CMTimeMakeWithSeconds(Float64(value), preferredTimescale: 60000)
         player.seek(to: time, toleranceBefore: .zero, toleranceAfter: .zero)
+        
+        if let touchEvent = event.allTouches?.first {
+            switch touchEvent.phase {
+            case .ended:
+                generateImage()
+            default:
+                break
+            }
+        }
     }
     
 }
